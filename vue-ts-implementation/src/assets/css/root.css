@@ -24,7 +24,6 @@
 .light {
 	--bg: var(--gray0);
 	--bg-nav: linear-gradient(to right, var(--gray1), var(--gray2));
-	--bg-dropdown: var(--gray0);
 	--text: var(--gray4);
 	--border-color: var(--blue);
 }
@@ -32,7 +31,6 @@
 .dark {
 	--bg: var(--gray3);
 	--bg-nav: linear-gradient(to right, var(--gray3), var(--gray4));
-	--bg-dropdown: var(--gray4);
 	--text: var(--gray0);
 	--border-color: var(--purple);
 }
@@ -49,31 +47,13 @@ nav {
 	background: var(--bg-nav);
 	color: var(--text);
 }
-.dropdown-menu {
-	background: var(--bg-dropdown);
-	border-color: var(--border-color);
-}
+
 .color-preview::before {
 	border-color: var(--border-color);
 }
-.color-preview.dark::before {
-	border-color: var(--dark-bg);
+.theme--dark::before {
+	background: var(--dark-bg);
 }
-.color-preview.light::before {
-	border-color: var(--light-bg);
-}
-.main-logo:hover {
-	animation: color-rotate 2s;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-/* Animations */
-
-@keyframes color-rotate {
-	from {
-		filter: hue-rotate(0deg);
-	}
-	to {
-		filter: hue-rotate(360deg);
-	}
+.theme--light::before {
+	background: var(--light-bg);
 }
