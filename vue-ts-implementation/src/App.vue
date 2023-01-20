@@ -36,9 +36,28 @@ export default defineComponent({
 				}
 			},
 			immediate: true
+		},
+		$route: {
+			handler(to) {
+				document.title = to.meta.title || "Sample Project";
+			},
+			immediate: true
 		}
 	}
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.navbar {
+	& + * {
+		margin-top: 70px;
+	}
+}
+section {
+	padding: 1em;
+	clip-path: polygon(50% 0%, 100% 0, 100% 65%, 50% 100%, 0 65%, 0 0);
+	margin-bottom: 1em;
+	padding-bottom: 3.5em;
+	text-align: center;
+}
+</style>

@@ -19,14 +19,14 @@
 			<a
 				v-if="theme == 'light'"
 				class="color-preview theme--dark"
-				href="#"
+				href="javascript:void(0);"
 				@click="changeTheme('dark')">
 				Dark
 			</a>
 			<a
 				v-if="theme == 'dark'"
 				class="color-preview theme--light"
-				href="#"
+				href="javascript:void(0);"
 				@click="changeTheme('light')">
 				Light
 			</a>
@@ -50,7 +50,10 @@ export default defineComponent({
 </script>
 <style scoped lang="scss">
 .navbar {
+	top: 0;
 	height: 70px;
+	position: fixed;
+	z-index: 5;
 	width: 100%;
 	ul {
 		&.navbar-nav {
@@ -59,16 +62,21 @@ export default defineComponent({
 			justify-content: space-evenly;
 			height: 100%;
 			gap: 0.5rem;
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
 			a {
 				display: flex;
 				align-items: center;
-				width: 100%;
+				width: fit-content;
+				padding-left: 2rem;
+				padding-right: 2rem;
 				height: 100%;
 				size: 0.7rem;
 				font-weight: bold;
 			}
 			.color-preview {
 				gap: 0.25rem;
+				width: fit-content;
 				&::before {
 					content: " ";
 					border-width: 2px;

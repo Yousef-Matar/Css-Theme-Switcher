@@ -1,5 +1,13 @@
 <template>
-	<h1>This is a Home page</h1>
+	<HomeLayout />
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from "vue";
+
+import HomeLayout from "@/components/Home/HomeLayout.vue";
+export default defineComponent({
+	name: "App",
+	components: { HomeLayout }
+});
+</script>

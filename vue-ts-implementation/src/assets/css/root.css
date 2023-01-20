@@ -40,7 +40,7 @@ body {
 	color: var(--text);
 	background: var(--bg);
 }
-header {
+section {
 	background: var(--bg-nav);
 }
 nav {
